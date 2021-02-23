@@ -1,5 +1,6 @@
 package be.technifutur.Labo3.model.entities;
 
+import be.technifutur.Labo3.model.entities.enums.Categorie;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -13,14 +14,15 @@ import java.time.LocalDate;
 @EqualsAndHashCode
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Product {
+public class Produit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
      int id;
 
-    @Column
-     String nom;
+    @Column( nullable = false,columnDefinition = "varchar(255)")
+
+    String nom;
 
     @Column
      String description;
@@ -40,12 +42,12 @@ public class Product {
      int quantité;
 
     @Column
-     Category category;
+    Categorie categorie;
 
+    @OneToOne
+    private Fournisseur fournisseur;
 
-    //private Fournisseur fournisseur;
-
-    @Column
+    @Column(columnDefinition = "varchar(255)")
      String imageProduit;
 
      Double tva;

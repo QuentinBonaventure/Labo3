@@ -1,5 +1,7 @@
 package be.technifutur.Labo3.model.entities;
 
+import be.technifutur.Labo3.model.entities.enums.Secteur;
+import be.technifutur.Labo3.model.entities.enums.StatutSocial;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -19,21 +21,19 @@ public class Fournisseur {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
      int id;
 
-    @Column
+    @Column( nullable = false,columnDefinition = "varchar(100)")
     String nom;
     @Column
-    Enum status_social;
+    StatutSocial status_social;
 
     @Column
-    Enum secteur;
+    Secteur secteur;
 
-    @Column
+    @Column(nullable = false)
+    Timestamp date_insertion;
 
-     Timestamp date_insertion;
-
-
-    @Column
-    private Timestamp date_update;
+    @Column(nullable = false)
+    Timestamp date_update;
 
 
 

@@ -1,6 +1,6 @@
 package be.technifutur.Labo3.model.dtos;
 
-import be.technifutur.Labo3.model.entities.Category;
+import be.technifutur.Labo3.model.entities.enums.Categorie;
 import be.technifutur.Labo3.model.entities.Fournisseur;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ProductDTO {
+public class ProduitDTO {
 
     private int id;
 
@@ -31,7 +31,7 @@ public class ProductDTO {
 
     private int quantité;
 
-    private Category category;
+    private Categorie categorie;
 
     private Fournisseur fournisseur;
 

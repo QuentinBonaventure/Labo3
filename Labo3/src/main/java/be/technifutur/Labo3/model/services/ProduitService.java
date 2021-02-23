@@ -1,32 +1,32 @@
 package be.technifutur.Labo3.model.services;
 
-import be.technifutur.Labo3.model.dtos.ProductDTO;
-import be.technifutur.Labo3.model.entities.Product;
+import be.technifutur.Labo3.model.dtos.ProduitDTO;
+import be.technifutur.Labo3.model.entities.Produit;
 
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class ProductService implements Crudable<Product, ProductDTO, Integer>{
+public class ProduitService implements Crudable<Produit, ProduitDTO, Integer>{
 
     @Override
-    public List<ProductDTO> getAll() {
+    public List<ProduitDTO> getAll() {
         return null;
     }
 
     @Override
-    public ProductDTO getById(Integer integer) {
+    public ProduitDTO getById(Integer integer) {
         return null;
     }
 
     @Override
-    public boolean insert(Product product) {
+    public boolean insert(Produit produit) {
         return false;
     }
 
     @Override
-    public boolean update(Product product, Integer integer) {
+    public boolean update(Produit produit, Integer integer) {
         return false;
     }
 
