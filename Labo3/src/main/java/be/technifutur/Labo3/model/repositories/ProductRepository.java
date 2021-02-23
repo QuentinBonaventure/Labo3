@@ -1,6 +1,7 @@
-package com.openclassroom.Labo3.model.repositories;
+package be.technifutur.Labo3.model.repositories;
 
-import com.openclassroom.Labo3.model.entities.Product;
+import be.technifutur.Labo3.model.entities.Product;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

@@ -1,6 +1,7 @@
 package be.technifutur.Labo3.model.entities;
 
 import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -11,42 +12,43 @@ import java.time.LocalDate;
 @Builder
 @EqualsAndHashCode
 @Entity
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+     int id;
 
     @Column
-    private String nom;
+     String nom;
 
     @Column
-    private String description;
+     String description;
 
     @Column
-    private LocalDate dateEntree;
+     LocalDate dateEntree;
 
     @Column
-    private LocalDate dateUpdate;
+    LocalDate dateUpdate;
 
     @Column
-    private LocalDate datePeremption;
+     LocalDate datePeremption;
 
     @Column()
-    private Double prixAchat;
+     Double prixAchat;
     @Column
-    private int quantité;
+     int quantité;
 
-
-    //private Category category;
+    @Column
+     Category category;
 
 
     //private Fournisseur fournisseur;
 
     @Column
-    private String imageProduit;
+     String imageProduit;
 
-    private Double tva;
+     Double tva;
 
 
 

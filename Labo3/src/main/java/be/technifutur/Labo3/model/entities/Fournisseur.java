@@ -1,6 +1,7 @@
 package be.technifutur.Labo3.model.entities;
 
 import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -11,23 +12,24 @@ import java.sql.Timestamp;
 @Builder
 @EqualsAndHashCode
 @Entity
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Fournisseur {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+     int id;
 
     @Column
-    private String nom;
+    String nom;
     @Column
-    private Enum status_social;
+    Enum status_social;
 
     @Column
-    private Enum secteur;
+    Enum secteur;
 
     @Column
 
-    private Timestamp date_insertion;
+     Timestamp date_insertion;
 
 
     @Column
