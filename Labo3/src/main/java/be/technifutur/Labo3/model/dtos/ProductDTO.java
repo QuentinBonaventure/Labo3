@@ -1,7 +1,7 @@
-package com.openclassroom.Labo3.model.dtos;
+package be.technifutur.Labo3.model.dtos;
 
-import com.openclassroom.Labo3.model.entities.Category;
-import com.openclassroom.Labo3.model.entities.Fournisseur;
+import be.technifutur.Labo3.model.entities.Category;
+import be.technifutur.Labo3.model.entities.Fournisseur;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

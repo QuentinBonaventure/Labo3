@@ -1,13 +1,15 @@
-package com.openclassroom.Labo3.model.services;
+package be.technifutur.Labo3.model.services;
 
-import com.openclassroom.Labo3.model.dtos.ProductDTO;
-import com.openclassroom.Labo3.model.entities.Product;
+import be.technifutur.Labo3.model.dtos.ProductDTO;
+import be.technifutur.Labo3.model.entities.Product;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class ProductService implements Crudable<Product, ProductDTO, Integer>{
+
     @Override
     public List<ProductDTO> getAll() {
         return null;

@@ -1,4 +1,4 @@
-package com.openclassroom.Labo3.model.services;
+package be.technifutur.Labo3.model.services;
 
 import java.util.List;
 

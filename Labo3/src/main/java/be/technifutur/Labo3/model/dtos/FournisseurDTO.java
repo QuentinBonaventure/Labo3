@@ -1,4 +1,4 @@
-package com.openclassroom.Labo3.model.dtos;
+package be.technifutur.Labo3.model.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

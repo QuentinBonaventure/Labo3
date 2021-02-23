@@ -1,4 +1,4 @@
-package com.openclassroom.Labo3.model.entities;
+package be.technifutur.Labo3.model.entities;
 
 public enum Category {
 }
