@@ -1,15 +1,17 @@
 package be.technifutur.Labo3.model.dtos;
 
+import be.technifutur.Labo3.model.entities.Produit;
+import be.technifutur.Labo3.model.entities.enums.Secteur;
+import be.technifutur.Labo3.model.entities.enums.StatutSocial;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
+import java.time.Instant;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -17,15 +19,23 @@ import java.sql.Timestamp;
 @Builder
 public class FournisseurDTO {
 
-    private int id;
 
-    private String nom;
+    int id;
 
-    private Enum status_social;
 
-    private Enum secteur;
+    String entreprise;
 
-    private Timestamp date_insertion;
+    StatutSocial statutSocial;
 
-    private Timestamp date_update;
+
+    Secteur secteur;
+
+
+    Instant dateInsertion;
+
+
+    Instant dateUpdate;
+
+
+    List<ProduitDTO> produits;
 }

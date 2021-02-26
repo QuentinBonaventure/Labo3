@@ -23,11 +23,14 @@ public class Commande {
     @Column(nullable = false)
     LocalDateTime dateCreation;
 
+    @Column
     boolean estPaye;
 
     @ManyToMany
-    List<Produit> produitsList;
+    List<Produit> produits;
 
     @ManyToOne
     Utilisateur utilisateur;
+
+
 }

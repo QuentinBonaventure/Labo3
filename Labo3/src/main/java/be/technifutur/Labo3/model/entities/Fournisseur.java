@@ -4,9 +4,15 @@ import be.technifutur.Labo3.model.entities.enums.Secteur;
 import be.technifutur.Labo3.model.entities.enums.StatutSocial;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -22,18 +28,24 @@ public class Fournisseur {
      int id;
 
     @Column( nullable = false,columnDefinition = "varchar(100)")
-    String nom;
+    String entreprise;
+
     @Column
-    StatutSocial status_social;
+    StatutSocial statutSocial;
 
     @Column
     Secteur secteur;
 
-    @Column(nullable = false)
-    Timestamp date_insertion;
+    @NotNull
+    @CreationTimestamp
+    Instant dateInsertion;
 
-    @Column(nullable = false)
-    Timestamp date_update;
+
+    @UpdateTimestamp
+    Instant dateUpdate;
+
+    @OneToMany(mappedBy = "fournisseur")
+    List<Produit> produits = new ArrayList<>();
 
 
 

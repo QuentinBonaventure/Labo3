@@ -2,6 +2,8 @@ package be.technifutur.Labo3.model.dtos;
 
 import be.technifutur.Labo3.model.entities.Adresse;
 import be.technifutur.Labo3.model.entities.Commande;
+import be.technifutur.Labo3.model.entities.Produit;
+import be.technifutur.Labo3.model.entities.enums.Droits;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,14 +18,33 @@ import java.util.List;
 @Builder
 public class UtilisateurDTO {
 
+
     int id;
-    String nom;
-    String prenom;
-    Enum DroitAcces;
+
+    String name;
+
+
+    String firstName;
+
+
+    Droits DroitAcces;
+
+
     String avatar;
+
+
     String pseudo;
+
+
     String mdp;
+
+
     Adresse adresse;
+
+
     List<Commande> commandes;
+
+
+    List<Produit> produitsList;
 
 }

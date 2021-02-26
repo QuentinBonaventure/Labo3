@@ -7,7 +7,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CommandeRepository implements Crudable<Commande, CommandeDTO, Integer>{
+public class CommandeService  implements Crudable<Commande, CommandeDTO, Integer> {
+
     @Override
     public List<CommandeDTO> getAll() {
         return null;

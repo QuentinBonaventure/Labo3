@@ -1,0 +1,35 @@
+<app-root></app-root>
+<button (click)="getAllProduits()">Afficher</button>
+<table style="color: rgb(7, 37, 82);" class="allTableSelect">
+    <thead >
+        <th width=100px class="selectallth">ID</th>
+        <th width=100px class="selectallth">Nom</th>
+        <th width=100px class="selectallth">Description</th>
+        <th width=100px class="selectallth">Categorie</th>
+        <th width=100px class="selectallth">Date d'entrée</th>
+        <th width=100px class="selectallth">Date d'update</th>
+        <th width=100px class="selectallth">Prix d'achat (/kg)</th>
+        <th width=100px class="selectallth">Quantité</th>
+        <th width=100px class="selectallth">Image Produit</th>
+        <th width=100px class="selectallth">TVA</th>
+        <th width=100px class="selectallth">Fournisseur</th>
+    </thead>
+    <tbody *ngIf="listeProduits.length > 0">
+        <tr *ngFor="let prod of listeProduits">
+            <td width=100px class="selectalltd">{{prod.id}}</td>
+            <td width=100px class="selectalltd">{{prod.nom}}</td>
+            <td width=100px class="selectalltd">{{prod.description}}</td>  
+            <td width=100px class="selectalltd">{{prod.categorie}}</td>
+            <td width=100px class="selectalltd">{{prod.dateInsertion}}</td>
+            <td width=100px class="selectalltd">{{prod.dateUpdate}}</td>
+            <td width=100px class="selectalltd">{{prod.datePeremption}}</td>
+            <td width=100px class="selectalltd">{{prod.prixAchat}}</td>
+            <td width=100px class="selectalltd">{{prod.imageProduit}}</td>
+            <td width=100px class="selectalltd">{{prod.tva}}</td>
+            <td width=100px class="selectalltd">{{prod.fournisseurDto.entreprise}}</td>
+         
+        </tr>
+
+
+    </tbody>
+</table>

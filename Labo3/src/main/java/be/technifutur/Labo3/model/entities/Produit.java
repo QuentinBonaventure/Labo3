@@ -6,6 +6,8 @@ import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -28,7 +30,7 @@ public class Produit {
      String description;
 
     @Column
-     LocalDate dateEntree;
+     LocalDate dateInsertion;
 
     @Column
     LocalDate dateUpdate;
@@ -41,17 +43,24 @@ public class Produit {
     @Column
      int quantité;
 
+    @Column(columnDefinition = "varchar(255)")
+    String imageProduit;
+
+    @Column(nullable = false)
+    int tva;
+
     @Column
     Categorie categorie;
 
-    @OneToOne
-    private Fournisseur fournisseur;
+    @ManyToOne
+   Fournisseur fournisseur;
 
-    @Column(columnDefinition = "varchar(255)")
-     String imageProduit;
 
-     Double tva;
+    @ManyToMany(mappedBy = "produits")
+    List<Commande> commandes;
 
+    @ManyToMany(mappedBy = "produitsList")
+    List<Utilisateur> utilisateurs;
 
 
 

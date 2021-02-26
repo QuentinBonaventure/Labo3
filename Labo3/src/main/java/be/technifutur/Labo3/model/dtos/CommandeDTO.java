@@ -17,9 +17,18 @@ import java.util.List;
 @Builder
 public class CommandeDTO {
 
+
     int id;
+
+
     LocalDateTime dateCreation;
+
+
     boolean estPaye;
-    List<Produit> produitsList;
+
+
+    List<Produit> produits;
+
+
     Utilisateur utilisateur;
 }

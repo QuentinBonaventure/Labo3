@@ -1,6 +1,7 @@
 package be.technifutur.Labo3.model.entities;
 
 
+import be.technifutur.Labo3.model.entities.enums.Droits;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -20,12 +21,13 @@ public class Utilisateur {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     @Column(nullable = false,length = 50)
-    String nom;
+    String name;
 
     @Column(nullable = false,length = 50)
-    String prenom;
+    String firstName;
+
     @Column(nullable = false)
-    Enum DroitAcces;
+    Droits DroitAcces;
 
     @Column
     String avatar;
@@ -39,8 +41,11 @@ public class Utilisateur {
     @Embedded
     Adresse adresse;
 
-    @OneToMany
+    @OneToMany(mappedBy = "utilisateur")
     List<Commande> commandes;
+
+    @ManyToMany
+    List<Produit> produitsList;
 
 
 }
