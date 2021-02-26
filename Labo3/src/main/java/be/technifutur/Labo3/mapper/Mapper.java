@@ -63,7 +63,7 @@ public class Mapper {
                 .secteur(fournisseur.getSecteur())
                 .dateInsertion(fournisseur.getDateInsertion())
                 .dateUpdate(fournisseur.getDateUpdate())
-                .produits(fournisseur.getProduits().stream().map(this::toProduitDto).collect(Collectors.toList()))
+                .produits( fournisseur.getProduits().stream().map(this::toProduitDto).collect(Collectors.toList()))
                 .build();
 
     }

@@ -8,5 +8,5 @@ export interface Fournisseur {
     secteur : String,
     dateInsertion : Date,
     dateUpdate : Date,
-    produits : Array<Produit>;
+    produitsDto : Array<Produit>;
 }

@@ -13,5 +13,5 @@ export interface Produit {
     quantite : number,
     image_Produit : String,
     tva : number,
-    fournisseursDto : Fournisseur
+    fournisseurDto : Fournisseur
 }

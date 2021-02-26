@@ -29,7 +29,10 @@ this.getAllProduits();
       (error) => {
         console.log('On y est pas encore mais on va y arriver !' + error)
       }
+    
     )
+    console.log(this.listeFournisseurs );
+    console.log( this.listeProduits);
   }
 
   getAllProduits() {

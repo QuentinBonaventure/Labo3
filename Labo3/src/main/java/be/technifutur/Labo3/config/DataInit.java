@@ -88,6 +88,18 @@ public class DataInit  implements InitializingBean {
                     .tva(6)
                     .build(),
             Produit.builder()
+                    .nom("Ribs d'agneau")
+                    .description("Delicieux cote sautée d'agneau")
+                    .categorie(Categorie.Poitrine)
+                    .dateInsertion(LocalDate.now())
+                    .dateUpdate(LocalDate.now())
+                    .datePeremption(LocalDate.now().plusDays(15))
+                    .prixAchat(26.2)
+                    .quantité(19)
+                    .fournisseur(fournisseurs.get(2))
+                    .tva(6)
+                    .build(),
+            Produit.builder()
                     .nom("Chipolata")
                     .description("Saucisse porc nature")
                     .categorie(Categorie.Saucisse)
