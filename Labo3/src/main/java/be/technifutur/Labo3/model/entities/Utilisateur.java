@@ -7,6 +7,7 @@ import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 @Data
 @NoArgsConstructor
@@ -27,10 +28,9 @@ public class Utilisateur {
     String firstName;
 
     @Column(nullable = false)
-    Droits DroitAcces;
+    Droits droitAcces;
 
-    @Column
-    String avatar;
+
 
     @Column(length = 50, nullable = false)
     String pseudo;
@@ -42,10 +42,9 @@ public class Utilisateur {
     Adresse adresse;
 
     @OneToMany(mappedBy = "utilisateur")
-    List<Commande> commandes;
+    List<Commande> commandes = new ArrayList<>();
 
-    @ManyToMany
-    List<Produit> produitsList;
+
 
 
 }

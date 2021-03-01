@@ -1,9 +1,13 @@
 package be.technifutur.Labo3.mapper;
 
+import be.technifutur.Labo3.model.dtos.CommandeDTO;
 import be.technifutur.Labo3.model.dtos.FournisseurDTO;
 import be.technifutur.Labo3.model.dtos.ProduitDTO;
+import be.technifutur.Labo3.model.dtos.UtilisateurDTO;
+import be.technifutur.Labo3.model.entities.Commande;
 import be.technifutur.Labo3.model.entities.Fournisseur;
 import be.technifutur.Labo3.model.entities.Produit;
+import be.technifutur.Labo3.model.entities.Utilisateur;
 import org.springframework.stereotype.Service;
 
 import java.util.stream.Collectors;
@@ -80,5 +84,57 @@ public class Mapper {
                 .build();
     }
 
+    public CommandeDTO toCommandeDto(Commande commande){
+            return CommandeDTO.builder()
+                    .id(commande.getId())
+                    .reference(commande.getReference())
+                    .dateCreation(commande.getDateCreation())
+                    .produitsDto(commande.getProduits()
+                    .stream()
+                    .map(this::toProduitDto)
+                    .collect(Collectors.toList()))
+                    .utilisateurDto(toUtilisateurDTO(commande.getUtilisateur()))
+                    .estPaye(commande.getEstPaye())
+                    .moyenPayement(commande.getMoyenPayement())
+                    .build();
+    }
 
+        public Commande toCommandeEntity(CommandeDTO commandeDto){
+            return Commande.builder()
+                    .id(commandeDto.getId())
+                    .reference(commandeDto.getReference())
+                    .dateCreation(commandeDto.getDateCreation())
+                    .produits(commandeDto.getProduitsDto()
+                    .stream()
+                    .map(this::toProduitEntity)
+                    .collect(Collectors.toList()))
+                    .utilisateur(toUtilisateurEntity(commandeDto.getUtilisateurDto()))
+                    .estPaye(commandeDto.getEstPaye())
+                    .moyenPayement(commandeDto.getMoyenPayement())
+                    .build();
+        }
+        public UtilisateurDTO toUtilisateurDTO (Utilisateur utilisateur){
+            return UtilisateurDTO.builder()
+                    .id(utilisateur.getId())
+                    .name(utilisateur.getName())
+                    .firstName(utilisateur.getFirstName())
+                    .droitAcces(utilisateur.getDroitAcces())
+                    .pseudo(utilisateur.getPseudo())
+                    .mdp(utilisateur.getMdp())
+                    .adresse(utilisateur.getAdresse())
+                    .commandes(utilisateur.getCommandes().stream().map(this::toCommandeDto).collect(Collectors.toList()))
+                    .build();
+            }
+
+    public Utilisateur toUtilisateurEntity (UtilisateurDTO utilisateur){
+        return Utilisateur.builder()
+                .id(utilisateur.getId())
+                .name(utilisateur.getName())
+                .firstName(utilisateur.getFirstName())
+                .droitAcces(utilisateur.getDroitAcces())
+                .pseudo(utilisateur.getPseudo())
+                .mdp(utilisateur.getMdp())
+                .adresse(utilisateur.getAdresse())
+                .build();
+    }
 }

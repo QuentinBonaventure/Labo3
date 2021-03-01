@@ -59,8 +59,7 @@ public class Produit {
     @ManyToMany(mappedBy = "produits")
     List<Commande> commandes;
 
-    @ManyToMany(mappedBy = "produitsList")
-    List<Utilisateur> utilisateurs;
+
 
 
 

@@ -56,7 +56,7 @@ public class ProduitDTO {
     List<CommandeDTO> commandesDto;
 
 
-    List<UtilisateurDTO> utilisateursDto;
+
 
 
 

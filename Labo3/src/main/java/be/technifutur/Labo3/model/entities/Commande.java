@@ -1,5 +1,6 @@
 package be.technifutur.Labo3.model.entities;
 
+import be.technifutur.Labo3.model.entities.enums.MoyenPayement;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -20,11 +21,17 @@ public class Commande {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
+    @Column(nullable = false, columnDefinition = "varchar(255)")
+    String reference;
+
     @Column(nullable = false)
     LocalDateTime dateCreation;
 
     @Column
-    boolean estPaye;
+    Boolean estPaye;
+
+    @Column
+    MoyenPayement moyenPayement;
 
     @ManyToMany
     List<Produit> produits;

@@ -37,6 +37,7 @@ public class ProduitApiController  implements RestControllable<Produit, ProduitD
 
     @Override
     @PostMapping
+    @CrossOrigin
     public ResponseEntity<Boolean> insert(@Valid @RequestBody Produit produit) {
 
         return ResponseEntity.ok(this.produitService.insert(produit));

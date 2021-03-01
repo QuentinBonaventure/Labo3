@@ -27,10 +27,10 @@ public class UtilisateurDTO {
     String firstName;
 
 
-    Droits DroitAcces;
+    Droits droitAcces;
 
 
-    String avatar;
+
 
 
     String pseudo;
@@ -41,10 +41,10 @@ public class UtilisateurDTO {
 
     Adresse adresse;
 
+    List<CommandeDTO> commandes;
 
-    List<Commande> commandes;
 
 
-    List<Produit> produitsList;
+
 
 }

@@ -1,5 +1,22 @@
 <app-root></app-root>
-<button (click)="getAllFournisseurs()">Afficher</button>
+
+<nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo center">JuQ Boucherie</a>
+      <ul class="left hide-on-med-and-down">
+        <li><a href="http://localhost:4200/home">Home</a></li>
+        <li><a href="http://localhost:4200/fournisseurs">Fournisseurs</a></li>
+        <li><a href="http://localhost:4200/produits">Produits</a></li>
+        
+       
+      </ul>
+    </div>
+  </nav>
+
+
+<button class="waves-effect waves-light  btn-large green" type="submit" name="action" (click)="getAllFournisseurs()" >Submit
+    <i class="material-icons right"></i>
+  </button>
 <table style="color: rgb(7, 37, 82);" class="allTableSelect">
     <thead >
         <th width=100px class="selectallth">ID</th>

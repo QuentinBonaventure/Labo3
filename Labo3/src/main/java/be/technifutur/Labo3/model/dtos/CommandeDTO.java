@@ -2,6 +2,7 @@ package be.technifutur.Labo3.model.dtos;
 
 import be.technifutur.Labo3.model.entities.Produit;
 import be.technifutur.Labo3.model.entities.Utilisateur;
+import be.technifutur.Labo3.model.entities.enums.MoyenPayement;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,16 +20,17 @@ public class CommandeDTO {
 
 
     int id;
-
+    String reference;
 
     LocalDateTime dateCreation;
 
 
-    boolean estPaye;
+    Boolean estPaye;
+
+    MoyenPayement moyenPayement;
+
+    List<ProduitDTO> produitsDto;
 
 
-    List<Produit> produits;
-
-
-    Utilisateur utilisateur;
+    UtilisateurDTO utilisateurDto;
 }

@@ -34,8 +34,10 @@ public class FournisseurApiController implements  RestControllable<Fournisseur, 
     }
 
     @Override
-    public ResponseEntity<Boolean> insert(Fournisseur fournisseur) {
-        return null;
+    @PostMapping
+    @CrossOrigin
+    public ResponseEntity<Boolean> insert(@Valid @RequestBody Fournisseur fournisseur) {
+        return ResponseEntity.ok(this.fournisseurService.insert(fournisseur));
     }
 
     @Override
