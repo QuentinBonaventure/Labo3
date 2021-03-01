@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Map;
+
 @RestController
 @RequestMapping(path = "/api/fournisseurs")
 public class FournisseurApiController implements  RestControllable<Fournisseur, FournisseurDTO,Integer>{
@@ -52,5 +54,9 @@ public class FournisseurApiController implements  RestControllable<Fournisseur, 
     @CrossOrigin
     public ResponseEntity<Boolean> delete(@PathVariable("id") Integer integer) {
         return ResponseEntity.ok(this.fournisseurService.delete(integer));
+    }
+    @PatchMapping(path = "/{id}")
+    public ResponseEntity<Boolean> partialUpdate(@RequestBody Map<String, Object> updates, @PathVariable Integer id) throws IllegalAccessException {
+        return ResponseEntity.ok(this.fournisseurService.partialUpdate(updates, id));
     }
 }

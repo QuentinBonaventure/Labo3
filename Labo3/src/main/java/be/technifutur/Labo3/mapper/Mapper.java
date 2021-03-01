@@ -57,9 +57,11 @@ public class Mapper {
                 .build();
     }
 
+public FournisseurDTO toFournisseurDto(Fournisseur fournisseur){
+            return toFournisseurDto(fournisseur, false);
+}
 
-
-    public FournisseurDTO toFournisseurDto(Fournisseur fournisseur ){
+    public FournisseurDTO toFournisseurDto(Fournisseur fournisseur , boolean withProduit){
         return FournisseurDTO.builder()
                 .id(fournisseur.getId())
                 .entreprise(fournisseur.getEntreprise())
@@ -67,7 +69,7 @@ public class Mapper {
                 .secteur(fournisseur.getSecteur())
                 .dateInsertion(fournisseur.getDateInsertion())
                 .dateUpdate(fournisseur.getDateUpdate())
-                .produits( fournisseur.getProduits().stream().map(this::toProduitDto).collect(Collectors.toList()))
+                .produits(withProduit ? fournisseur.getProduits().stream().map(this::toProduitDto).collect(Collectors.toList()):null)
                 .build();
 
     }
@@ -84,7 +86,11 @@ public class Mapper {
                 .build();
     }
 
-    public CommandeDTO toCommandeDto(Commande commande){
+    public CommandeDTO toCommandeDto (Commande commande) {
+        return toCommandeDto(commande, false);
+    }
+
+    public CommandeDTO toCommandeDto(Commande commande, boolean withUtilisateur){
             return CommandeDTO.builder()
                     .id(commande.getId())
                     .reference(commande.getReference())
@@ -93,7 +99,7 @@ public class Mapper {
                     .stream()
                     .map(this::toProduitDto)
                     .collect(Collectors.toList()))
-                    .utilisateurDto(toUtilisateurDTO(commande.getUtilisateur()))
+                    .utilisateurDto(withUtilisateur ? toUtilisateurDTO(commande.getUtilisateur()) : null)
                     .estPaye(commande.getEstPaye())
                     .moyenPayement(commande.getMoyenPayement())
                     .build();
@@ -113,7 +119,10 @@ public class Mapper {
                     .moyenPayement(commandeDto.getMoyenPayement())
                     .build();
         }
-        public UtilisateurDTO toUtilisateurDTO (Utilisateur utilisateur){
+        public UtilisateurDTO toUtilisateurDTO(Utilisateur utilisateur){
+            return toUtilisateurDTO(utilisateur, false);
+    }
+        public UtilisateurDTO toUtilisateurDTO (Utilisateur utilisateur, boolean withCommande){
             return UtilisateurDTO.builder()
                     .id(utilisateur.getId())
                     .name(utilisateur.getName())
@@ -122,7 +131,7 @@ public class Mapper {
                     .pseudo(utilisateur.getPseudo())
                     .mdp(utilisateur.getMdp())
                     .adresse(utilisateur.getAdresse())
-                    .commandes(utilisateur.getCommandes().stream().map(this::toCommandeDto).collect(Collectors.toList()))
+                    .commandes(withCommande ?utilisateur.getCommandes().stream().map(this::toCommandeDto).collect(Collectors.toList()) : null)
                     .build();
             }
 

@@ -8,9 +8,10 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Map;
 
 @RestController
-@RequestMapping(path = "/api/commande")
+@RequestMapping(path = "/api/commandes")
 public class CommandeApiController implements RestControllable<Commande, CommandeDTO,Integer> {
     private final CommandeService commandeService;
 
@@ -52,5 +53,9 @@ public class CommandeApiController implements RestControllable<Commande, Command
     public ResponseEntity<Boolean> delete(@PathVariable("id") Integer integer) {
 
         return ResponseEntity.ok(this.commandeService.delete(integer));
+    }
+    @PatchMapping(path = "/{id}")
+    public ResponseEntity<Boolean> partialUpdate(@RequestBody Map<String, Object> updates, @PathVariable Integer id) throws IllegalAccessException {
+        return ResponseEntity.ok(this.commandeService.partialUpdate(updates, id));
     }
 }
