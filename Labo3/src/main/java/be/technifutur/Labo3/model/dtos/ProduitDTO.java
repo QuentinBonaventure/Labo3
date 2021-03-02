@@ -41,7 +41,7 @@ public class ProduitDTO {
 
     Double prixAchat;
 
-    int quantité;
+    int quantite;
 
 
     Categorie categorie;

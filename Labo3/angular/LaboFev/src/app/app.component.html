@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Demo</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <header *ngIf="!isLogin" style="text-align: right;">
+    <form  [formGroup]="formLogin" (submit)="onSubmit()">
+    <div>
+      <label for="pseudo">Pseudo</label>
+      <input placeholder="Pseudo" id="pseudo" type="text" formControlName="pseudo">
+     </div>
+     <div>
+      <label for="mdp">Mot de passe</label>
+      <input placeholder="Mot de passe" id="mdp" type="text" formControlName="mdp">
+     </div>
+
+    <button type="submit">Login</button>
+    <button (click)="signIn()">SignIn</button>
+  </form>
+  </header>
+  <header *ngIf="isLogin">
+    Vous êtes logué en temps que {{currentUser.pseudo}}
+    <button (click)="logOut()">LogOut</button>
+  </header>
+
+
+   <h1>Bienvenue sur le WebShop de QJ Boucherie</h1>
+<div class="topnav">
+  <ol>
+    <button (click)="reload()">Home</button>
+    <button (click)="getProduits()">Nos Produits</button>
+    <button (click)="getFournisseurs()">Nos Fournisseurs</button>
+    <button *ngIf="isLogin" (click)="espacePerso()">Espace Perso</button>
+    
+   
+    
+  </ol>
+</div>
+
+<app-produits *ngIf="produits"></app-produits>
+<app-fournisseurs *ngIf="fournisseurs" ></app-fournisseurs>
+<app-sign-in *ngIf="signin"></app-sign-in>
+<app-home *ngIf="home"></app-home>
+<app-espaceperso *ngIf="espaceperso"></app-espaceperso>
+  <router-outlet></router-outlet>
+</body>
+</html>

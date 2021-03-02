@@ -1,0 +1,9 @@
+<h1 style="color: red;">Bienvenue {{currentUser.pseudo}}</h1>
+<div style="color: red;">
+    <ul>
+        <li *ngIf="!donnees" (click)="afficheDonnees()"> <a>Mes données perso </a></li>
+        <li *ngIf="donnees" (click)="cacheDonnees()"> <a>Masquer mes données perso </a></li>
+        <li *ngIf="!commandes" (click)="afficheCommandes()"><a>Ma liste de commmandes </a></li>
+        <li *ngIf="commandes" (click)="cacheCommandes()"> Masquer ma liste de commande</li>
+    </ul>
+</div>

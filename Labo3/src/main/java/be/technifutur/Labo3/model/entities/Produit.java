@@ -41,7 +41,7 @@ public class Produit {
     @Column()
      Double prixAchat;
     @Column
-     int quantité;
+     int quantite;
 
     @Column(columnDefinition = "varchar(255)")
     String imageProduit;

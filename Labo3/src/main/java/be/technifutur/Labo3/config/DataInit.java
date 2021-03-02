@@ -76,7 +76,7 @@ public class DataInit  implements InitializingBean {
                     .dateUpdate(LocalDate.now())
                     .datePeremption(LocalDate.now().plusDays(15))
                     .prixAchat(26.6)
-                    .quantité(8)
+                    .quantite(8)
                     .fournisseur(fournisseurs.get(1))
                     .tva(6)
                     .build(),
@@ -88,7 +88,7 @@ public class DataInit  implements InitializingBean {
                     .dateUpdate(LocalDate.now())
                     .datePeremption(LocalDate.now().plusDays(15))
                     .prixAchat(12.7)
-                    .quantité(25)
+                    .quantite(25)
                     .fournisseur(fournisseurs.get(2))
                     .tva(6)
                     .build(),
@@ -100,7 +100,7 @@ public class DataInit  implements InitializingBean {
                     .dateUpdate(LocalDate.now())
                     .datePeremption(LocalDate.now().plusDays(15))
                     .prixAchat(26.2)
-                    .quantité(19)
+                    .quantite(19)
                     .fournisseur(fournisseurs.get(2))
                     .tva(6)
                     .build(),
@@ -112,7 +112,7 @@ public class DataInit  implements InitializingBean {
                     .dateUpdate(LocalDate.now())
                     .datePeremption(LocalDate.now().plusDays(15))
                     .prixAchat(11.0)
-                    .quantité(24)
+                    .quantite(24)
                     .fournisseur(fournisseurs.get(3))
                     .tva(6)
                     .build(),
@@ -124,7 +124,7 @@ public class DataInit  implements InitializingBean {
                     .dateUpdate(LocalDate.now())
                     .datePeremption(LocalDate.now().plusDays(15))
                     .prixAchat(16.3)
-                    .quantité(30)
+                    .quantite(30)
                     .fournisseur(fournisseurs.get(0))
                     .tva(6)
                     .build()

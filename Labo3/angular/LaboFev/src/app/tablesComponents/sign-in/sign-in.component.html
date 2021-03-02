@@ -1,0 +1,43 @@
+<form [formGroup]="formSignIn" (submit)="onSubmit()">
+
+<div>
+    <label for="name">Name</label>
+    <input id="name" type="text" formControlName="name">
+</div>
+<div>
+    <label for="firstName">FirstName</label>
+    <input id="firstName" type="text" formControlName="firstName">
+</div>
+<div>
+    <label for="pseudo">Pseudo</label>
+    <input id="pseudo" type="text" formControlName="pseudo">
+</div>
+<div>
+    <label for="mdp">Mot de passe</label>
+    <input id="mdp" type="text" formControlName="mdp">
+</div>
+
+<div>
+    <label for="rue">Rue</label>
+    <input id="rue" type="text" formControlName="rue">
+</div>
+<div>
+    <label for="numero">Numero</label>
+    <input id="numero" type="number" formControlName="numero">
+</div>
+<div>
+    <label for="codePostal">CodePostal</label>
+    <input id="codePostal" type="text" formControlName="codePostal">
+</div>
+<div>
+    <label for="ville">Ville</label>
+    <input id="ville" type="text" formControlName="ville">
+</div>
+<div>
+    <label for="pays">Pays</label>
+    <input id="pays" type="text" formControlName="pays">
+</div>
+
+<button type="submit">Enregistrer</button>
+
+</form>

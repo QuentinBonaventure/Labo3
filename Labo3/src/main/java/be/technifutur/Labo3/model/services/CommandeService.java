@@ -61,7 +61,7 @@ public class CommandeService  implements Crudable<Commande, CommandeDTO, Integer
     }
     public boolean partialUpdate(Map<String, Object> updates, Integer integer) throws IllegalAccessException {
         Commande commandeToUpdate = this.mapper.toCommandeEntity(getById(integer));
-        Class<?> clazz = Fournisseur.class;
+        Class<?> clazz = Commande.class;
 
         Field[] fields = clazz.getDeclaredFields();
 

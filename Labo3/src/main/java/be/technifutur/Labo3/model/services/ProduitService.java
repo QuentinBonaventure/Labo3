@@ -61,7 +61,7 @@ public class ProduitService implements Crudable<Produit, ProduitDTO, Integer>{
     public boolean update(Produit produit, Integer integer) {
         Produit old = this.produitRepository.getOne(integer);
         Produit toTest = new Produit(old.getId(), old.getNom(),old.getDescription(),old.getDateInsertion(),
-                old.getDateUpdate(),old.getDatePeremption(), old.getPrixAchat(),old.getQuantité(),old.getImageProduit()
+                old.getDateUpdate(),old.getDatePeremption(), old.getPrixAchat(),old.getQuantite(),old.getImageProduit()
                 ,old.getTva(),old.getCategorie(),old.getFournisseur(),old.getCommandes());
         produit.setId(integer);
         this.produitRepository.save(produit);

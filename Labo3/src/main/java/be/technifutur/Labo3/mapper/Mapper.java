@@ -32,7 +32,7 @@ public class Mapper {
                 .dateUpdate(produit.getDateUpdate())
                 .datePeremption(produit.getDatePeremption())
                 .prixAchat(produit.getPrixAchat())
-                .quantité(produit.getQuantité())
+                .quantite(produit.getQuantite())
                 .imageProduit(produit.getImageProduit())
                 .fournisseurDto(withFournisseur ? toFournisseurDto(produit.getFournisseur()) : null)
                 .build();
@@ -51,9 +51,9 @@ public class Mapper {
                 .dateUpdate(produitDTO.getDateUpdate())
                 .datePeremption(produitDTO.getDatePeremption())
                 .prixAchat(produitDTO.getPrixAchat())
-                .quantité(produitDTO.getQuantité())
+                .quantite(produitDTO.getQuantite())
                 .imageProduit(produitDTO.getImageProduit())
-                .fournisseur(toFournisseurEntity(produitDTO.getFournisseurDto()))
+                .fournisseur((produitDTO.getFournisseurDto() == null) ? null : toFournisseurEntity(produitDTO.getFournisseurDto()))
                 .build();
     }
 
